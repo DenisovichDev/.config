@@ -33,6 +33,8 @@ Plug 'https://github.com/ap/vim-css-color'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Tree Sitter
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Markdown Preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 call plug#end()
 
 
@@ -44,6 +46,10 @@ if (has("termguicolors"))
   set termguicolors
 endif
 syntax enable
+
+" ------------------------------------------------------------------
+" Plugin Related Configurations 
+" ------------------------------------------------------------------
 
 " Material
 " -------
@@ -60,6 +66,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 colorscheme material
+
 " C/C++ 
 " -----
 " Enable function highlighting (affects both C and C++ files)
@@ -94,8 +101,17 @@ nnoremap <silent> <F5> :NERDTreeToggle<CR>
 " Disable automantic comment leader. Use o or O in normal mode instead
 " :set formatoptions-=cr
 
+" Intellisense
+" ------------
+source $HOME/.config/nvim/plug-config/coc.vim
+
+" Markdown Preview
+" ----------------
+source $HOME/.config/nvim/plug-config/markdown-preview.vim
+
+" ------------------------------------------------------------------
 " Integrated terminal
-" -------------------
+" ------------------------------------------------------------------
 
 " open new split panes to right and below
 set splitright
@@ -113,12 +129,9 @@ nnoremap <c-n> :call OpenTerminal()<CR>
 " Set nonumber to terminal
 autocmd TermOpen * setlocal nonumber norelativenumber
 
-" Intellisense
-" ------------
-source $HOME/.config/nvim/plug-config/coc.vim
-
+" ------------------------------------------------------------------
 " Normal Configs
-" ------------------------------
+" ------------------------------------------------------------------
 
 " I don't know the reason for this
 set nobackup
@@ -169,3 +182,5 @@ nnoremap tc :tabclose<CR>
 " Recursive maps
 nmap <C-_> gcc
 vmap <C-_> gcc
+" Opening/Closing markdown preview: mp return
+nmap mp<CR> <Plug>MarkdownPreviewToggle
