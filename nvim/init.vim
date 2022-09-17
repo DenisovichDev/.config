@@ -1,9 +1,11 @@
-" ----------------------
+" ------------------------------------------------------------------
 " Neovim config file
-" ----------------------
+" ------------------------------------------------------------------
 "
 "  DenisovichDev
 "  (https://denisovichdev.github.io/link-tree)
+
+"  gf to open sourced files
 
 
 "  Plugins
@@ -113,9 +115,10 @@ source $HOME/.config/nvim/plug-config/markdown-preview.vim
 " Integrated terminal
 " ------------------------------------------------------------------
 
-" open new split panes to right and below
-set splitright
-set splitbelow
+" open new split panes to right and below (Already set in
+" general/settings.vim)
+" set splitright
+" set splitbelow
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
 " start terminal in insert mode
@@ -130,24 +133,10 @@ nnoremap <c-n> :call OpenTerminal()<CR>
 autocmd TermOpen * setlocal nonumber norelativenumber
 
 " ------------------------------------------------------------------
-" Normal Configs
+" General Settings
 " ------------------------------------------------------------------
 
-" I don't know the reason for this
-set nobackup
-set nowritebackup
-" Yeah, I'm petty like that
-set mouse=a
-" Line numbers and tabwidth
-set number
-set tabstop=4
-set shiftwidth=4
-
-" Current line highlight
-set cursorline
-
-" Soft wrap
-set wrap linebreak
+source $HOME/.config/nvim/general/settings.vim
 
 " Automatically switch between relativenumber and norelativenumber.
 " Absolute number is shown in insert mode and when the buffer is not in focus.
@@ -184,3 +173,9 @@ nmap <C-_> gcc
 vmap <C-_> gcc
 " Opening/Closing markdown preview: mp return
 nmap mp<CR> <Plug>MarkdownPreviewToggle
+" Better tabbing
+vnoremap < <gv
+vnoremap > >gv
+" Easy CAPS
+inoremap <c-u> <ESC>viwUi
+nnoremap <c-u> viwU<Esc>
