@@ -170,7 +170,7 @@ nnoremap tc :tabclose<CR>
 " Commenting Shortcuts
 " Recursive maps
 nmap <C-_> gcc
-vmap <C-_> gcc
+vmap <C-_> gc
 " Opening/Closing markdown preview: mp return
 nmap mp<CR> <Plug>MarkdownPreviewToggle
 " Better tabbing
