@@ -5,5 +5,11 @@
       "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
       "filetypes": ["c", "cpp", "objc", "objcpp"]
 	  }
-   }
+   },
+   "coc.source.vimtex.filetypes": [
+       "tex",
+       "plaintex",
+       "latex",
+       "markdown"
+   ]
 }

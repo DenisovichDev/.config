@@ -37,6 +37,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Markdown Preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+" Pandoc and its syntax highlighting
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 call plug#end()
 
 
@@ -147,6 +150,11 @@ source $HOME/.config/nvim/general/settings.vim
 :  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
 :  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 :augroup END
+
+" Pandoc
+" ------
+let g:pandoc#folding#level = 1
+
 
 " Shortcuts for switching panels
 " ------------------------------
