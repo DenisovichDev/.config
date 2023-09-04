@@ -1,6 +1,6 @@
-" ------------------------------------------------------------------
+" -------------------------------------------
 " Neovim config file
-" ------------------------------------------------------------------
+" -------------------------------------------
 "
 "  DenisovichDev
 "  (https://denisovichdev.github.io/link-tree)
@@ -40,6 +40,12 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " Pandoc and its syntax highlighting
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+" Snippets
+" Track the engine.
+Plug 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+" TreeSitter
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 
@@ -114,14 +120,36 @@ source $HOME/.config/nvim/plug-config/coc.vim
 " ----------------
 source $HOME/.config/nvim/plug-config/markdown-preview.vim
 
+" Pandoc
+" ------
+
+set nofoldenable    " disable folding
+let g:pandoc#folding#mode=1
+
+" UltiSnip
+" --------
+" Default directory
+let g:UltiSnipsSnippetDirectories=["~/.vim/plugged/vim-snippets/UltiSnips"]
+" Trigger configuration. 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" Some more variables
+let g:snips_author="Bhaswar Chakraborty"
+
+" Auto Correction
+set spelllang=en_us
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+
 " ------------------------------------------------------------------
 " Integrated terminal
 " ------------------------------------------------------------------
 
-" open new split panes to right and below (Already set in
-" general/settings.vim)
-" set splitright
-" set splitbelow
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
 " start terminal in insert mode
@@ -151,18 +179,45 @@ source $HOME/.config/nvim/general/settings.vim
 :  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 :augroup END
 
-" Pandoc
-" ------
-let g:pandoc#folding#level = 1
-
-
+" General Keymaps
+" ----------------
+noremap <Up> :echoerr "Stop being a peasant"<CR>
+imap <Up> <C-o>:echoerr "Hah! What a loser"<CR>
+noremap <Right> :echoerr "Seriously, again?"<CR>
+imap <Right> <C-o>:echoerr "Why don't you drink your piss tea, you little pissboy"<CR>
+noremap <Down> :echoerr "When would you ever learn..."<CR>
+imap <Down> <C-o>:echoerr "You should just go back to VSCode"<CR>
+noremap <Left> :echoerr "ERROR: Too much stupid"<CR>
+imap <Left> <C-o>:echoerr "Good day! You still suck"<CR>
+" wrap a word in these characters
+" double tap single quotes for double quotes since it's quicker
+nnoremap <leader>" viwc""<Esc>P
+vnoremap <leader>" c""<Esc>P
+nnoremap <leader>'' viwc""<Esc>P
+vnoremap <leader>'' c""<Esc>P
+nnoremap <leader>' viwc''<Esc>P
+vnoremap <leader>' c''<Esc>P
+" latex, code, italics, do <leader>* twice for bold
+nnoremap <leader>$ viwc$$<Esc>P
+vnoremap <leader>$ c$$<Esc>P
+nnoremap <leader>` viwc``<Esc>P
+vnoremap <leader>` c``<Esc>P
+nnoremap <leader>* viwc**<Esc>P
+vnoremap <leader>* c**<Esc>P
+" brackets p for parenths. It's closer.
+nnoremap <leader>p viwc()<Esc>P
+nnoremap <leader>{ viwc{}<Esc>P
+nnoremap <leader>[ viwc[]<Esc>P
+vnoremap <leader>p c()<Esc>P
+vnoremap <leader>{ c{}<Esc>P
+vnoremap <leader>[ c[]<Esc>P
 " Shortcuts for switching panels
-" ------------------------------
 " use alt+hjkl to move between split/vsplit panels
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
 tnoremap <A-k> <C-\><C-n><C-w>k
 tnoremap <A-l> <C-\><C-n><C-w>l
+" Switch between split buffers
 nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
@@ -171,7 +226,8 @@ nnoremap <A-l> <C-w>l
 nnoremap <C-j> :bp<CR>
 nnoremap <C-k> :bn<CR>
 " normal mode
-inoremap ii <Esc>
+" inoremap ii <Esc>
+inoremap jk <Esc>
 " Disable highlighting after search by Esc and /
 nnoremap <Esc>/ :noh<CR>
 nnoremap tc :tabclose<CR>
@@ -187,3 +243,8 @@ vnoremap > >gv
 " Easy CAPS
 inoremap <c-u> <ESC>viwUi
 nnoremap <c-u> viwU<Esc>
+" Quick compile scripts
+map <leader>g :!comp <c-r>%<CR><CR>
+" PDF preview
+map <leader>o :!pdfout <c-r>%<CR><CR>
+

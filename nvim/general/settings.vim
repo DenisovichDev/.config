@@ -36,3 +36,5 @@ set clipboard=unnamedplus               " Copy paste between vim and everything 
 
 " Write with sudo priviledges without openning with sudo nvim
 cmap w!! w !sudo tee %
+
+" set shell=/bin/zsh                      " Set default shell to zsh instead of bash
