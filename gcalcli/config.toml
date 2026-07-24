@@ -1,0 +1,8 @@
+#:schema https://raw.githubusercontent.com/insanum/gcalcli/HEAD/data/config-schema.json
+[calendars]
+default-calendars = ["bhaswarishi2908@gmail.com", "Rishi's Classes"]
+ignore-calendars = ["Ziel Classes", "Little Angels Classes", "Meet Link"]
+
+[output]
+week-start = "monday"
+

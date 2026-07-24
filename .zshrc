@@ -1,7 +1,9 @@
 # Set up the prompt 
 autoload -Uz vcs_info 
 
-# export COLORTERM=truecolor
+export COLORTERM=truecolor
+export EDITOR="/usr/bin/vim"
+export VISUAL="/usr/bin/vim"
 
 zstyle ':vcs_info:*' enable git 
 zstyle ':vcs_info:git:*' formats ' %F{121}[%b]%f' 
@@ -91,4 +93,12 @@ alias la='ls -lAh'
 # ZSH Syntax Highlighting 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.scripts/:$PATH"
+
+if [[ -f ~/.scripts/rishifetch ]]; then
+    ~/.scripts/rishifetch
+fi
+
 
