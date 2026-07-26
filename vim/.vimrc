@@ -51,10 +51,13 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
-augroup myCmds
-    au!
-    autocmd VimEnter * silent !echo -ne "\e[2 q"
-augroup END
+" augroup myCmds
+    " au!
+    " autocmd VimEnter * silent !echo -ne "\e[2 q"
+" augroup END
+if exists('&guicursor')
+    set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20
+endif
 
 " FORTRAN settings
 let fortran_free_source=1

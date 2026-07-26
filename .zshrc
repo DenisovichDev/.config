@@ -102,3 +102,4 @@ if [[ -f ~/.scripts/rishifetch ]]; then
 fi
 
 
+export PATH="$HOME/.local/bin:$PATH"
