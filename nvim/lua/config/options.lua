@@ -51,6 +51,7 @@ opt.timeoutlen = 500        -- By default timeoutlen is 1000 ms
 opt.formatoptions:remove({ "c", "r", "o" })
 opt.clipboard = "unnamedplus"     -- Copy paste between vim and everything else
 -- set autochdir                -- Your working directory will always be the same as your working directory
+opt.signcolumn = "yes"      -- Force sign column to be always visible
 
 -- Write with sudo priviledges without openning with sudo nvim
 -- cmap w!! w !sudo tee %

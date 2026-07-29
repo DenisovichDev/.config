@@ -50,7 +50,6 @@ require("config.lazy")
 
 
 
-
 print("Hello, Lua is running seccessfully. Everything is beautiful and nothing is hurt")
 
 

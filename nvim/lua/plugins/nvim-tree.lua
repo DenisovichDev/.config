@@ -5,6 +5,7 @@ return {
             "nvim-tree/nvim-web-devicons",
         },
 
+
         config = function()
             require("nvim-tree").setup({
                 sort_by = "case_sensitive",
@@ -14,6 +15,20 @@ return {
                 },
                 renderer = {
                     group_empty = true,
+                    icons = {
+                        git_placement = "after", -- or "before"
+                        glyphs = {
+                            git = {
+                                unstaged  = "󰄱",
+                                staged    = "󰱒",
+                                unmerged  = "",
+                                renamed   = "󰁕",
+                                untracked = " ",
+                                deleted   = " ",
+                                ignored   = " ",
+                            },
+                        },
+                    },
                 },
                 filters = {
                     dotfiles = false,
