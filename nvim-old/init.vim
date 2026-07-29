@@ -167,7 +167,7 @@ autocmd TermOpen * setlocal nonumber norelativenumber
 " General Settings
 " ------------------------------------------------------------------
 
-source $HOME/.config/nvim/general/settings.vim
+source $HOME/.config/nvim-old/general/settings.vim
 
 " Automatically switch between relativenumber and norelativenumber.
 " Absolute number is shown in insert mode and when the buffer is not in focus.

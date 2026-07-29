@@ -105,19 +105,19 @@ cmap w!! w !sudo tee %
 
 " General Keymaps
 " ----------------
-noremap <Up> :echoerr "Stop being a peasant"<CR>
+nnoremap <Up> :echoerr "Stop being a peasant"<CR>
 imap <Up> <C-o>:echoerr "Hah! What a loser"<CR>
-noremap <Right> :echoerr "Seriously, again?"<CR>
+nnoremap <Right> :echoerr "Seriously, again?"<CR>
 imap <Right> <C-o>:echoerr "Why don't you drink your piss tea, you little pissboy"<CR>
-noremap <Down> :echoerr "When would you ever learn..."<CR>
+nnoremap <Down> :echoerr "When would you ever learn..."<CR>
 imap <Down> <C-o>:echoerr "You should just go back to VSCode"<CR>
-noremap <Left> :echoerr "ERROR: Too much stupid"<CR>
+nnoremap <Left> :echoerr "ERROR: Too much stupid"<CR>
 imap <Left> <C-o>:echoerr "Good day! You still suck"<CR>
 " Switch between split buffers
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 " Key Bindings
 map <F5> :NERDTreeToggle<CR>
 nnoremap <C-Left> :bp<CR>
