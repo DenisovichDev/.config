@@ -85,3 +85,12 @@ map("n", "<c-u>", "viwU<Esc>")
 -- PDF preview
 -- map <leader>o :!pdfout <c-r>%<CR><CR>
 
+-- Leave terminal mode
+map("t", "<Esc>", [[<C-\><C-n>]])
+
+-- Open a terminal
+map("n", "<C-n>", function()
+    vim.cmd("split")
+    vim.cmd("resize 10")
+    vim.cmd("terminal")
+end, { desc = "Open terminal" })
