@@ -9,6 +9,7 @@ local opt = vim.opt
 
 -- Set Leader to Space
 vim.g.mapleader = " "
+vim.g.maplocalleader = "//"
 
 vim.cmd('syntax on')        -- Syntax highliting
 opt.hidden = true           -- Required for multiple buffers
@@ -57,4 +58,5 @@ opt.clipboard = "unnamedplus"     -- Copy paste between vim and everything else
 -- set shell=/bin/zsh            -- Set default shell to zsh instead of bash
 
 vim.keymap.set('c', 'w!!', 'w !sudo tee % > /dev/null')
+
 
