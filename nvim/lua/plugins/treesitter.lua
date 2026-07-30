@@ -1,3 +1,10 @@
+------------------------------------
+-- Neovim Config Files
+------------------------------------
+
+-- Copyright: DenisovichDev
+-- (https://denisovichdev.github.io/link-tree)
+
 return {
     {
         'nvim-treesitter/nvim-treesitter',
@@ -55,7 +62,6 @@ return {
                     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
                 end,
             })
-
         end,
 
     },

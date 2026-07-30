@@ -1,6 +1,14 @@
+------------------------------------
+-- Neovim Config Files
+------------------------------------
+
+-- Copyright: DenisovichDev
+-- (https://denisovichdev.github.io/link-tree)
+
 return {
     {
-        'nvim-telescope/telescope.nvim', version = '*',
+        'nvim-telescope/telescope.nvim',
+        version = '*',
         dependencies = {
             'nvim-lua/plenary.nvim',
             -- optional but recommended

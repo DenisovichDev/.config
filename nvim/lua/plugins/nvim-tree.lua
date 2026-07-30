@@ -1,3 +1,10 @@
+------------------------------------
+-- Neovim Config Files
+------------------------------------
+
+-- Copyright: DenisovichDev
+-- (https://denisovichdev.github.io/link-tree)
+
 local function my_on_attach(bufnr)
     local api = require("nvim-tree.api")
     -- Load all default mappings

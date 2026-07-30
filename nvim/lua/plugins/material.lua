@@ -1,3 +1,10 @@
+------------------------------------
+-- Neovim Config Files
+------------------------------------
+
+-- Copyright: DenisovichDev
+-- (https://denisovichdev.github.io/link-tree)
+
 return {
     {
         'marko-cerovac/material.nvim',
@@ -11,5 +18,5 @@ return {
 
             vim.cmd.colorscheme("material")
         end,
-     },
+    },
 }

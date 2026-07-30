@@ -1,3 +1,10 @@
+------------------------------------
+-- Neovim Config Files
+------------------------------------
+
+-- Copyright: DenisovichDev
+-- (https://denisovichdev.github.io/link-tree)
+
 -- Define the signs shown in the sign column
 
 vim.diagnostic.config({

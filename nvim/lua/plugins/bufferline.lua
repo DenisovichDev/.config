@@ -6,9 +6,11 @@
 -- (https://denisovichdev.github.io/link-tree)
 
 return {
-    settings = {
-        yaml = {
-            keyOrdering = false,
+    {
+        'akinsho/bufferline.nvim',
+        version = "*",
+        dependencies = {
+            'nvim-tree/nvim-web-devicons'
         },
-    },
+    }
 }

@@ -1,3 +1,10 @@
+------------------------------------
+-- Neovim Config Files
+------------------------------------
+
+-- Copyright: DenisovichDev
+-- (https://denisovichdev.github.io/link-tree)
+
 return {
     {
         'nvim-lualine/lualine.nvim',
@@ -14,7 +21,6 @@ return {
                     -- section_separators = { left = '', right = '' },
                 },
             }
-
         end,
     },
 
