@@ -25,6 +25,8 @@ return {
                 "html",
                 "cssls",
                 "ts_ls",
+                "yamlls",
+                "taplo",
             },
         },
         dependencies = {
