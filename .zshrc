@@ -98,7 +98,7 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
 export PATH="$HOME/.scripts/:$PATH"
 
-if [[ -f ~/.scripts/rishifetch ]]; then
+if [[ -f ~/.scripts/rishifetch && -z "$NVIM" ]]; then
     ~/.scripts/rishifetch
 fi
 
