@@ -8,7 +8,7 @@ return {
             lint.linters_by_ft = {
                 python = { "ruff" },
 
-                markdown = { "markdownlint" },
+                -- markdown = { "markdownlint" },
 
                 javascript = { "eslint_d" },
                 typescript = { "eslint_d" },
