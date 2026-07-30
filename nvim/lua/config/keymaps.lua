@@ -20,12 +20,12 @@ map("i", "<Left>", "<C-o>:echoerr \"Good day! You still suck\"<CR>")
 
 -- wrap a word in these characters
 -- double tap single quotes for double quotes since it's quicker
-map("n", "<leader>\"", "viwc\"\"<Esc>P")        -- "
-map("v", "<leader>\"", "c\"\"<Esc>P")           -- "
-map("n", "<leader>'\'", "viwc\"\"<Esc>P")       -- "
-map("v", "<leader>''", "c\"\"<Esc>P")           -- "
-map("n", "<leader>'", "viwc''<Esc>P")           -- '
-map("v", "<leader>'", "c''<Esc>P")              -- '
+map("n", "<leader>\"", "viwc\"\"<Esc>P")  -- "
+map("v", "<leader>\"", "c\"\"<Esc>P")     -- "
+map("n", "<leader>'\'", "viwc\"\"<Esc>P") -- "
+map("v", "<leader>''", "c\"\"<Esc>P")     -- "
+map("n", "<leader>'", "viwc''<Esc>P")     -- '
+map("v", "<leader>'", "c''<Esc>P")        -- '
 
 -- markdown latex keybinds
 -- do <leader>* twice fo bold
@@ -59,8 +59,8 @@ map("n", "<A-k>", "<C-w>k")
 map("n", "<A-l>", "<C-w>l")
 
 -- switch tabs with Ctrl + j/k
-map("n", "<C-j>", ":bp<CR>")
-map("n", "<C-k>", ":bn<CR>")
+map("n", "<C-Right>", ":bp<CR>")
+map("n", "<C-Left>", ":bn<CR>")
 
 -- normal mode
 map("i", "jk", "<Esc>")
@@ -71,7 +71,7 @@ map("n", "tc", ":tabclose<CR>")
 -- Commenting Shortcuts
 -- Recursive maps
 map("n", "<C-_>", "gcc", { remap = true })
-map("v", "<C-_>", "gc", {remap = true })
+map("v", "<C-_>", "gc", { remap = true })
 -- Opening/Closing markdown preview: mp return
 map("n", "mp<CR>", "<Plug>MarkdownPreviewToggle", { remap = true })
 -- Better tabbing

@@ -6,7 +6,7 @@
 -- (https://denisovichdev.github.io/link-tree)
 
 -- Material theme
-vim.g.material_style = "deep ocean"
+vim.g.material_style = "oceanic"
 
 --- nvim-tree
 vim.g.loaded_netrw = 1
