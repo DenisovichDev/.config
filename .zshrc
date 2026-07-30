@@ -90,6 +90,7 @@ alias nrc='$EDITOR ~/.config/nvim'
 alias zrc='$EDITOR ~/.zshrc'
 alias ll='ls -lh'
 alias la='ls -lAh'
+alias :q='exit'
 
 # ZSH Syntax Highlighting 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -98,6 +99,7 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
 export PATH="$HOME/.scripts/:$PATH"
 
+# No rishifetch in neovim integrated terminal
 if [[ -f ~/.scripts/rishifetch && -z "$NVIM" ]]; then
     ~/.scripts/rishifetch
 fi

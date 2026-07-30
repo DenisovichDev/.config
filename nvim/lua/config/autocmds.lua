@@ -62,13 +62,15 @@ api.nvim_create_autocmd("BufReadPost",
 api.nvim_create_autocmd("FocusGained", { command = [[:checktime]] })
 
 
+-- Integrated terminal
 local termgrp = api.nvim_create_augroup("Terminal", { clear = true })
 api.nvim_create_autocmd("BufEnter",
     {
         pattern = "*",
+        group = termgrp,
         callback = function()
             if vim.bo.buftype == "terminal" then
-                vim.cmd("startinsert")
+                vim.cmd("startinsert!")
             end
         end,
     }
@@ -76,9 +78,11 @@ api.nvim_create_autocmd("BufEnter",
 api.nvim_create_autocmd("TermOpen",
     {
         pattern = "*",
+        group = termgrp,
         callback = function()
             vim.opt_local.number = false
             vim.opt_local.relativenumber = false
+            vim.cmd("startinsert!")
         end,
     }
 )
