@@ -2,8 +2,8 @@
 autoload -Uz vcs_info 
 
 export COLORTERM=truecolor
-export EDITOR="/usr/bin/vim"
-export VISUAL="/usr/bin/vim"
+export EDITOR="/home/rishi/.local/bin/nvim"
+export VISUAL="/home/rishi/.local/bin/nvim"
 
 zstyle ':vcs_info:*' enable git 
 zstyle ':vcs_info:git:*' formats ' %F{121}[%b]%f' 
@@ -85,8 +85,9 @@ alias ls='ls -F --color=auto'
 alias repo='cd /mnt/c/Local/Work/Repos/'
 alias cdd='cd /mnt/c/Local/'
 alias exp='Explorer.exe'
-alias vrc='vim ~/.vimrc'
-alias zrc='vim ~/.zshrc'
+alias vrc='$EDITOR ~/.vimrc'
+alias nrc='$EDITOR ~/.config/nvim'
+alias zrc='$EDITOR ~/.zshrc'
 alias ll='ls -lh'
 alias la='ls -lAh'
 
