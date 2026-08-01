@@ -8,7 +8,7 @@
 local function my_on_attach(bufnr)
     local api = require("nvim-tree.api")
     -- Load all default mappings
-    api.config.mappings.default_on_attach(bufnr)
+    api.map.on_attach.default(bufnr)
 
     local function opts(desc)
         return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }

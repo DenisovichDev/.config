@@ -59,8 +59,8 @@ map("n", "<A-k>", "<C-w>k")
 map("n", "<A-l>", "<C-w>l")
 
 -- switch tabs with Ctrl + j/k
-map("n", "<C-Right>", ":bp<CR>")
-map("n", "<C-Left>", ":bn<CR>")
+map("n", "<C-Left>", ":bp<CR>")
+map("n", "<C-Right>", ":bn<CR>")
 
 -- normal mode
 map("i", "jk", "<Esc>")
