@@ -21,7 +21,7 @@ require("config.keymaps")
 require("config.lazy")
 
 -- diagnostics settings
-require("config.diagnostic")
+require("config.lsp")
 
 
 print("Everything is beautiful and nothing is hurt")
