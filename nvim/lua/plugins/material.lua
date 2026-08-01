@@ -16,7 +16,7 @@ return {
                 lualine_style = 'stealth',
             })
 
-            vim.cmd.colorscheme("material")
+            -- vim.cmd.colorscheme("material")
         end,
     },
 }

@@ -15,7 +15,8 @@ return {
         config = function()
             require("lualine").setup {
                 options = {
-                    theme = "material",
+                    theme = "tokyonight",
+                    -- theme = "material",
                     globalstatus = true,
 
                     -- bubble theme changes
