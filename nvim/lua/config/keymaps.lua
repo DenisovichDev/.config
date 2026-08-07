@@ -20,12 +20,12 @@ map("i", "<Left>", "<C-o>:echoerr \"Good day! You still suck\"<CR>")
 
 -- wrap a word in these characters
 -- double tap single quotes for double quotes since it's quicker
-map("n", "<leader>\"", "viwc\"\"<Esc>P")  -- "
-map("v", "<leader>\"", "c\"\"<Esc>P")     -- "
-map("n", "<leader>'\'", "viwc\"\"<Esc>P") -- "
-map("v", "<leader>''", "c\"\"<Esc>P")     -- "
-map("n", "<leader>'", "viwc''<Esc>P")     -- '
-map("v", "<leader>'", "c''<Esc>P")        -- '
+map("n", "<leader>w\"", "viwc\"\"<Esc>P")  -- "
+map("v", "<leader>w\"", "c\"\"<Esc>P")     -- "
+map("n", "<leader>w'\'", "viwc\"\"<Esc>P") -- "
+map("v", "<leader>w''", "c\"\"<Esc>P")     -- "
+map("n", "<leader>w'", "viwc''<Esc>P")     -- '
+map("v", "<leader>w'", "c''<Esc>P")        -- '
 
 -- markdown latex keybinds
 -- do <leader>* twice fo bold
@@ -78,8 +78,8 @@ map("n", "mp<CR>", "<Plug>MarkdownPreviewToggle", { remap = true })
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 -- Easy CAPS
-map("i", "<c-u>", "<ESC>viwUi")
-map("n", "<c-u>", "viwU<Esc>")
+map("i", "<leader>wu", "<ESC>viwUi")
+map("n", "<leader>wu", "viwU<Esc>")
 -- Quick compile scripts
 -- map <leader>g :!comp <c-r>%<CR><CR>
 -- PDF preview

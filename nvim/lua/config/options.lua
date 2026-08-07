@@ -8,7 +8,7 @@
 local opt = vim.opt
 
 -- Set Leader to Space
-vim.g.mapleader = " "
+vim.g.mapleader = "\\"
 vim.g.maplocalleader = "//"
 
 vim.cmd('syntax on') -- Syntax highliting
