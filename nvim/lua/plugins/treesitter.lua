@@ -27,6 +27,7 @@ return {
 
                 "markdown",
                 "markdown_inline",
+                "latex",
 
                 "json",
                 "yaml",
@@ -54,6 +55,7 @@ return {
                     "yaml",
                     "toml",
                     "bash",
+                    "tex",
                 },
 
                 callback = function()

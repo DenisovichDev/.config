@@ -89,7 +89,7 @@ map("n", "<leader>wu", "viwU<Esc>")
 map("t", "<Esc>", [[<C-\><C-n>]])
 
 -- Open a terminal
-map("n", "<C-n>", function()
+map("n", "<leader>`", function()
     vim.cmd("split")
     vim.cmd("resize 10")
     vim.cmd("terminal")

@@ -34,6 +34,7 @@ return {
                 "ts_ls",
                 "yamlls",
                 "taplo",
+                "texlab",
             },
         },
         dependencies = {
