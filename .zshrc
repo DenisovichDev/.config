@@ -2,8 +2,13 @@
 autoload -Uz vcs_info 
 
 export COLORTERM=truecolor
-export EDITOR="/home/rishi/.local/bin/nvim"
-export VISUAL="/home/rishi/.local/bin/nvim"
+if [ "$(uname)" = "Darwin" ]; then
+    export EDITOR="/opt/homebrew/bin/nvim"
+    export VISUAL="/opt/homebrew/bin/nvim"
+else
+    export EDITOR="/home/rishi/.local/bin/nvim"
+    export VISUAL="/home/rishi/.local/bin/nvim"
+fi
 
 zstyle ':vcs_info:*' enable git 
 zstyle ':vcs_info:git:*' formats ' %F{121}[%b]%f' 
@@ -27,6 +32,10 @@ precmd() {
     build_prompt 
 }
 
+if [ "$(uname)" = "Darwin" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
@@ -48,13 +57,16 @@ setopt EXTENDED_GLOB
 
 autoload -Uz up-line-or-beginning-search
 autoload -Uz down-line-or-beginning-search
-
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
-bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
+[[ -n "${terminfo[kcuu1]}" ]] && bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
+[[ -n "${terminfo[kcud1]}" ]] && bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
 
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
+bindkey '^[OA' up-line-or-beginning-search
+bindkey '^[OB' down-line-or-beginning-search
 
 # Use modern completion system
 autoload -Uz compinit
@@ -82,23 +94,34 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # Aliases
 alias ls='ls -F --color=auto'
-alias repo='cd /mnt/c/Local/Work/Repos/'
-alias cdd='cd /mnt/c/Local/'
-alias exp='Explorer.exe'
-alias vrc='$EDITOR ~/.vimrc'
-alias nrc='$EDITOR ~/.config/nvim'
-alias zrc='$EDITOR ~/.zshrc'
+if [ "$(uname)" = "Darwin" ]; then
+    alias repo='cd /Users/rishi/Repos'
+    # alias vrc='$EDITOR ~/.config/nvim'
+    alias nrc='$EDITOR ~/.config/nvim'
+    alias zrc='$EDITOR ~/.zshrc'
+else
+    alias repo='cd /mnt/c/Local/Work/Repos/'
+    alias cdd='cd /mnt/c/Local/'
+    alias exp='Explorer.exe'
+    alias vrc='$EDITOR ~/.vimrc'
+    alias nrc='$EDITOR ~/.config/nvim'
+    alias zrc='$EDITOR ~/.zshrc'
+fi
 alias ll='ls -lh'
 alias la='ls -lAh'
 alias :q='exit'
 
-# ZSH Syntax Highlighting 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# ZSH minimal extensions
+if [ "$(uname)" = "Darwin" ]; then
+    source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
 export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
 export PATH="$HOME/.scripts/:$PATH"
-
 # No rishifetch in neovim integrated terminal
 if [[ -f ~/.scripts/rishifetch && -z "$NVIM" ]]; then
     ~/.scripts/rishifetch
