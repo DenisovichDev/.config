@@ -65,7 +65,7 @@ return {
             })
 
             -- Keymaps
-            vim.keymap.set("n", "<F5>", "<cmd>NvimTreeToggle<CR>",
+            vim.keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<CR>",
                 { desc = "Toggle file explorer" })
 
             vim.keymap.set("n", "<leader>o", "<cmd>NvimTreeFocus<CR>",
